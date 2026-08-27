@@ -12,13 +12,11 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
-  // POST: signup/Create user in DB
   @Post('signup')
   async register(@Body() createUserDto: CreateUserDto) {
     return await this.usersService.register(createUserDto);
   }
 
-  // POST: Login authentication
   @Post('login')
   async login(@Body() loginDto: LoginDto) {
     return await this.usersService.validateUser(loginDto);
